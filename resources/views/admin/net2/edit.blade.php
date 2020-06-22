@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title', '症状相談の編集')
+@section('title', '症状編集')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>症状相談の編集</h2>
-                <form action="{{ action('Admin\NetController@update') }}" method="post" enctype="multipart/form-data">
+                <h2>症状編集</h2>
+                <form action="{{ action('Admin\Net2Controller@update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -15,28 +15,15 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="symptom_name">症状名</label>
+                        <label class="col-md-2" for="title">タイトル</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="title" value="{{ $net_form->title }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2">性別</label>
-                        <div class="col-md-10">
-                            <input type="radio" class="" name="gender" value="man"><b>男性</b>
-                            <input type="radio" class="" name="gender" value="woman"><b>女性</b>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2" for="age">年齢</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="age" value="{{ $net_form->age }}">
+                            <input type="text" class="form-control" name="title" value="{{ $net2_form->title }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="body">本文</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ $net_form->body }}</textarea>
+                            <textarea class="form-control" name="body" rows="20">{{ $net2_form->body }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -44,7 +31,7 @@
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">
                             <div class="form-text text-info">
-                                設定中: {{ $net_form->image_path }}
+                                設定中: {{ $net2_form->image_path }}
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -55,23 +42,13 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-10">
-                            <input type="hidden" name="id" value="{{ $net_form->id }}">
+                            <input type="hidden" name="id" value="{{ $net2_form->id }}">
                             {{ csrf_field() }}
                             <input type="submit" class="btn btn-primary" value="更新">
                         </div>
                     </div>
                 </form>
                 <div class="row mt-5">
-                    <div class="col-md-4 mx-auto">
-                        <h2>編集履歴</h2>
-                        <ul class="list-group">
-                            @if ($net_form->diagnosises != NULL)
-                                @foreach ($net_form->diagnosises as $diagnosis)
-                                    <li class="list-group-item">{{ $diagnosis->edited_at }}</li>
-                                @endforeach
-                            @endif
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

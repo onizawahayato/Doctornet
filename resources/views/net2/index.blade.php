@@ -15,7 +15,7 @@
                                     @endif
                                 </div>
                                 <div class="title p-2">
-                                    <h1>{{ str_limit($headline->symptom_name, 70) }}</h1>
+                                    <h1>{{ str_limit($headline->title, 70) }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -32,20 +32,14 @@
                 @foreach($posts as $post)
                     <div class="post">
                         <div class="row">
-                            <div class="text col-md-6">
+                            <div class="text col-md-3">
                                 <div class="date">
                                     {{ $post->updated_at->format('Y年m月d日') }}
                                 </div>
-                                <div class="symptom_name">
-                                    {{ str_limit($post->symptom_name, 150) }}
+                                <div class="title">
+                                    {{ str_limit($post->title, 150) }}
                                 </div>
-                                <div class="gender">
-                                    {{ str_limit($post->gender, 150) }}
-                                </div>
-                                <div class="age">
-                                    {{ str_limit($post->age, 150) }}
-                                </div>
-                                <div class="body">
+                                <div class="body mt-6">
                                     {{ str_limit($post->body, 1500) }}
                                 </div>
                             </div>

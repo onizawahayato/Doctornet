@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\HTML;
+use App\Condition;
 
-use App\Symptom;
-
-class NetController extends Controller
+class Net2Controller extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Symptom::all()->sortByDesc('updated_at');
+        $posts = Condition::all()->sortByDesc('updated_at');
 
         if (count($posts) > 0) {
             $headline = $posts->shift();
@@ -19,6 +17,6 @@ class NetController extends Controller
             $headline = null;
         }
 
-        return view('net.index', ['headline' => $headline, 'posts' => $posts]);
+        return view('net2.index', ['headline' => $headline, 'posts' => $posts]);
     }
 }

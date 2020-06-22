@@ -4,18 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class net extends Model
+class Symptom extends Model
 {
      protected $guarded = array('id');
 
     public static $rules = array(
-        'Symptom name' => 'required',
         'gender' => 'required',
         'body' => 'required',
+        'age' => 'required',
+       
      );
-    public function histories()
+    public function diagnoses()
     {
-      return $this->hasMany('App\History');
+      return $this->hasMany('App\Diagnosis');
 
     }
 }
