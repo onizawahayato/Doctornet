@@ -77,8 +77,16 @@
                     <div class="col-md-4 mx-auto">
                         <h2>コメント</h2>
                         <ul class="list-group">
-                            @if ($net_form->diagnosises != NULL)
-                                @foreach ($net_form->diagnosises as $diagnosis)
+                            @if ($net_form->diagnoses != NULL)
+                                @foreach ($net_form->diagnoses as $diagnosis)
+                                
+                                <p>{{ $diagnosis->title }}</p>
+
+                                <p>{{ $diagnosis->name }}</p>
+                                
+                                <p>{{ $diagnosis->profession }}</p>
+                               
+                                <p>{{ $diagnosis->body }}</p>
                                 @endforeach
                             @endif
                         </ul>

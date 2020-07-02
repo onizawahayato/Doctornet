@@ -26,7 +26,7 @@ class Net1Controller extends Controller
         $net1->save();
         $symptom_id = $form['symptom_id'];
 
-        return redirect(route('symptom_detail', ['symptom_id' => $symptom_id]));
+        return redirect(route('symptom_detail', ['id' => $symptom_id]));
     }
 
     public function index(Request $request)

@@ -83,4 +83,12 @@ class NetController extends Controller
         $net->delete();
         return redirect('admin/net/');
     }
+    public function detail(Request $request)
+    {
+        $net = Symptom::find($request->id);
+        if (empty($net)) {
+            abort(404);
+        }
+        return view('admin.net.detail', ['net_form' => $net]);
+    }
 }
