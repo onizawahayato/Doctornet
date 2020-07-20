@@ -55,6 +55,7 @@
                                         @csrf
                                     </form>
                                 </div>
+                                
                                 <tbody>
                                     @foreach($posts as $net)
                                 <tr>
