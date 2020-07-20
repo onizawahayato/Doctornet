@@ -68,7 +68,7 @@
                                 <tr>
                                     <div>
                                         <a href="{{ action('Admin\Net1Controller@index', ['id' => $net1->id]) }}"> コメント一覧</a>
-                                    </div>
+                                    </div> 
                                 </tr>
                                  @endforeach
                                 </tbody>
