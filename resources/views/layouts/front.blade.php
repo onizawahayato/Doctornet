@@ -55,6 +55,23 @@
                                         @csrf
                                     </form>
                                 </div>
+                                <tbody>
+                                    @foreach($posts as $net)
+                                <tr>
+                                    <div>
+                                        <a href="{{ action('Admin\NetController@index', ['id' => $net->id]) }}">患者相談一覧</a>
+                                    </div>
+                                </tr>
+                                @endforeach
+    
+                                @foreach($posts as $net1)
+                                <tr>
+                                    <div>
+                                        <a href="{{ action('Admin\Net1Controller@index', ['id' => $net1->id]) }}"> コメント一覧</a>
+                                    </div>
+                                </tr>
+                                 @endforeach
+                                </tbody>
                             </li>
                             @endguest
                         </ul>
