@@ -72,6 +72,14 @@
                                     </div> 
                                 </tr>
                                  @endforeach
+                                 
+                                 @foreach($posts as $net2)
+                                <tr>
+                                    <div>
+                                        <a href="{{ action('Admin\Net2Controller@index', ['id' => $net2->id]) }}"> 症状概要一覧</a>
+                                    </div> 
+                                </tr>
+                                 @endforeach
                                 </tbody>
                             </li>
                             @endguest
