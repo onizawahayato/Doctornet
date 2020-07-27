@@ -55,8 +55,10 @@
                                         @csrf
                                     </form>
                                 </div>
-                                
+                                <div>
+                
                                 <tbody>
+                                    
                                     @foreach($posts as $net)
                                 <tr>
                                     <div>
@@ -91,8 +93,11 @@
                     </div>
                 </div>
             </nav>
-
-			
+            <div>
+                <li class="nav-item ml-8">
+        <a class="nav-link text-white" id="register" href="/register">新規登録</a>
+      </li>
+		</div>	
 		
 		
 	</div>

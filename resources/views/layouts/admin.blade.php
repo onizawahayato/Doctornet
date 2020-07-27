@@ -54,8 +54,10 @@
                                         @csrf
                                     </form>
                                 </div>
+                                
                             </li>
                             @endguest
+                            
                         </ul>
 
                         <!-- Right Side Of Navbar -->
